@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:tentwenty_task/modals/movie_genres.dart';
 import 'package:tentwenty_task/modals/movie_video.dart';
-import 'package:tentwenty_task/modals/upcoming_movie.dart';
+import 'package:tentwenty_task/modals/movie_modal.dart';
 import 'package:tentwenty_task/services/http_service.dart';
 
 class MovieDetailController extends GetxController{

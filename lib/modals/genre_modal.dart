@@ -1,12 +1,12 @@
 
-class Genre {
+class DummyGenres {
   int? id;
   String? name;
   String? imageUrl;
 
-  Genre({this.id, this.name, this.imageUrl});
+  DummyGenres({this.id, this.name, this.imageUrl});
 
-  Genre.fromJson(Map<String, dynamic> json) {
+  DummyGenres.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     imageUrl = json['ImageUrl'];
@@ -20,59 +20,59 @@ class Genre {
     return data;
   }
 
-  static List<Genre> getDummyGeres(){
+  static List<DummyGenres> getDummyGeres(){
     List rawList =
     [
       {
         "id": 35,
         "name": "Comedies",
-        "ImageUrl" : ""
+        "ImageUrl" : "assets/images/comedies.jpg"
       },
       {
         "id": 80,
         "name": "Crime",
-        "ImageUrl" : ""
+        "ImageUrl" : "assets/images/crimes.jpg"
       },
       {
         "id": 10751,
         "name": "Family",
-        "ImageUrl" : ""
+        "ImageUrl" : "assets/images/family.jpg"
       },
 
       {
         "id": 99,
         "name": "Documentaries",
-        "ImageUrl" : ""
+        "ImageUrl" : "assets/images/documentries.jpg"
       },
       {
         "id": 18,
         "name": "Darama",
-        "ImageUrl" : ""
+        "ImageUrl" : "assets/images/dramas.jpg"
       },
       {
         "id": 14,
         "name": "Fantasy",
-        "ImageUrl" : ""
+        "ImageUrl" : "assets/images/fantasy.jpg"
       },
 
 
       {
         "id": 27,
         "name": "Horror",
-        "ImageUrl" : ""
+        "ImageUrl" : "assets/images/horror.jpg"
       },
 
       {
         "id": 878,
         "name": "Sci-Fi",
-        "ImageUrl" : ""
+        "ImageUrl" : "assets/images/sci_fi.jpg"
       },
       {
         "id": 53,
         "name": "Thriller",
-        "ImageUrl" : ""
+        "ImageUrl" : "assets/images/thriller.jpg"
       }];
-   return  rawList.map((e) => Genre.fromJson(e)).toList();
+   return  rawList.map((e) => DummyGenres.fromJson(e)).toList();
 
   }
 }

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:tentwenty_task/getX_controllers/movie_detail_controller.dart';
 import 'package:tentwenty_task/modals/movie_video.dart';
-import 'package:tentwenty_task/modals/upcoming_movie.dart';
+import 'package:tentwenty_task/modals/movie_modal.dart';
 import 'package:tentwenty_task/screens/youtube_player_screen.dart';
 import 'package:tentwenty_task/utils/color_palatte.dart';
 import 'package:tentwenty_task/utils/constants.dart';
@@ -12,7 +12,7 @@ import 'package:tentwenty_task/widgets/my_button.dart';
 import 'package:tentwenty_task/widgets/my_text.dart';
 
 class MovieDetailScreen extends StatelessWidget {
-  UpcomingMovie movie;
+  MovieModal movie;
   MovieDetailController controller  = MovieDetailController();
   var getColor = {
     "0" : ColorPalette.blue_61C3F2,
@@ -114,8 +114,14 @@ class MovieDetailScreen extends StatelessWidget {
                         onPressed: (){
                           int index = controller.movieVideos.indexWhere((element) => element.type!.toUpperCase()=="Trailer".toUpperCase());
                           print(index);
-                          Get.to(()=>YoutubePlayerScreen(controller.movieVideos[index].key!));
-
+                         if(index!=-1)
+                           {
+                             Get.to(()=>YoutubePlayerScreen(controller.movieVideos[index].key!));
+                           }
+                         else
+                           {
+                             Get.snackbar("Not Found", "No Trailer has been found.");
+                           }
                         }),
                     const SizedBox(height: 35,),
                   ],

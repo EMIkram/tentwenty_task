@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 class MyBackButton extends StatelessWidget {
   EdgeInsets? padding;
   Color color;
-   MyBackButton({this.padding,this.color=Colors.white,Key? key}) : super(key: key);
+  GestureTapCallback? onTap;
+   MyBackButton({this.padding,this.onTap,this.color=Colors.white,Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: onTap??(){
         Navigator.pop(context);
       },
       child:   Padding(

@@ -1,4 +1,4 @@
-class UpcomingMovie {
+class MovieModal {
   bool? adult;
   String? backdropPath;
   List<int>? genreIds;
@@ -14,7 +14,7 @@ class UpcomingMovie {
   double? voteAverage;
   int? voteCount;
 
-  UpcomingMovie(
+  MovieModal(
       {this.adult,
         this.backdropPath,
         this.genreIds,
@@ -30,7 +30,7 @@ class UpcomingMovie {
         this.voteAverage,
         this.voteCount});
 
-  UpcomingMovie.fromJson(Map<String, dynamic> json) {
+  MovieModal.fromJson(Map<String, dynamic> json) {
     adult = json['adult'];
     backdropPath = json['backdrop_path'];
     genreIds = json['genre_ids'].cast<int>();
