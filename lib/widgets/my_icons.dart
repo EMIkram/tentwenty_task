@@ -33,5 +33,7 @@ class SvgIcons{
   static const String watch_icon = "assets/svgs/watch_icon.svg";
   static const String search_icon = "assets/svgs/search_icon.svg";
   static const String cross_icon = "assets/svgs/cross_icon.svg";
+  static const String seat_icon = "assets/svgs/seat_icon.svg";
+
 
 }

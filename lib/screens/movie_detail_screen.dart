@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:tentwenty_task/getX_controllers/home_controller.dart';
 import 'package:tentwenty_task/getX_controllers/movie_detail_controller.dart';
 import 'package:tentwenty_task/modals/movie_video.dart';
 import 'package:tentwenty_task/modals/movie_modal.dart';
+import 'package:tentwenty_task/screens/select_ticket_screen.dart';
 import 'package:tentwenty_task/screens/youtube_player_screen.dart';
 import 'package:tentwenty_task/utils/color_palatte.dart';
 import 'package:tentwenty_task/utils/constants.dart';
@@ -14,6 +16,7 @@ import 'package:tentwenty_task/widgets/my_text.dart';
 class MovieDetailScreen extends StatelessWidget {
   MovieModal movie;
   MovieDetailController controller  = MovieDetailController();
+  HomeController homeController = Get.find();
   var getColor = {
     "0" : ColorPalette.blue_61C3F2,
     "1" : ColorPalette.pink_E26CA5,
@@ -67,7 +70,7 @@ class MovieDetailScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         MyBackButton(),
-                        MyText("Watch",
+                        MyText(homeController.searchList.isEmpty&&homeController.searchFieldEnabled.value?"Watch":"",
                         fontSize: 16,
                         color: ColorPalette.white_F6F6FA,
                         )
@@ -91,6 +94,7 @@ class MovieDetailScreen extends StatelessWidget {
                           ),
                         ),
                         onPressed: (){
+                      Get.to(SelectTicketScreen(movie));
                       }),
                    const SizedBox(height: 12,),
                     MyButton(width: 280,
