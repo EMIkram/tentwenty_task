@@ -10,6 +10,7 @@ class ColorPalette{
   static Color pink_E26CA5 = Color(0xffE26CA5);
   static Color purple_564CA3 = Color(0xff564CA3);
   static Color yellow_CD9D0F = Color(0xffCD9D0F);
+  static Color textColor = Color(0xff202C43);
 
 
 }

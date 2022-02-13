@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyBackButton extends StatelessWidget {
   EdgeInsets? padding;
-   MyBackButton({this.padding,Key? key}) : super(key: key);
+  Color color;
+   MyBackButton({this.padding,this.color=Colors.white,Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +12,8 @@ class MyBackButton extends StatelessWidget {
         Navigator.pop(context);
       },
       child:   Padding(
-        padding: padding?? EdgeInsets.symmetric(horizontal: 13.w,vertical: 18.h),
-        child: Icon(Icons.arrow_back_ios),
+        padding: padding?? EdgeInsets.symmetric(horizontal: 13,vertical: 18),
+        child: Icon(Icons.arrow_back_ios,color: color,),
       ),
     );
   }

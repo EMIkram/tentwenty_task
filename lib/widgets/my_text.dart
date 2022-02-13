@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyText extends StatelessWidget {
   String text;
@@ -26,10 +26,10 @@ class MyText extends StatelessWidget {
     return Text(text,
       textAlign: textAlign,
       style:  style??GoogleFonts.poppins(
-        letterSpacing: letterSpacing,
-        fontSize: fontSize??14.sp,
-        color: color,
-        fontWeight: fontWeight,
+        // letterSpacing: letterSpacing,
+        fontSize: fontSize??14,
+        color: color??Colors.black,
+        fontWeight: fontWeight??FontWeight.normal,
         decoration: textDecoration
       ),
 
